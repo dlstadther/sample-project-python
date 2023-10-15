@@ -1,0 +1,81 @@
+name: tests
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+      - develop
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 - --version 1.6.1
+          poetry install
+
+      - name: Format checking with Black
+        run: poetry run black --check .
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 - --version 1.6.1
+          poetry install
+
+      - name: Lint with Ruff
+        run: poetry run ruff --output-format=github .
+
+  type-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 - --version 1.6.1
+          poetry install
+
+      - name: Type checking with Mypy
+        run: poetry run mypy .
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 - --version 1.6.1
+          poetry install
+
+      - name: Test with pytest
+        run: poetry run coverage run -m pytest -vv tests && poetry run coverage report
