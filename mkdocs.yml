@@ -1,0 +1,25 @@
+site_name: sample-project-python
+site_description: Sample Python Project
+repo_url: https://github.com/dlstadther/sample-project-python
+repo_name: dlstadther/sample-project-python
+
+theme:
+  name: "material"
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths:
+            - src
+          options:
+            # include docstrings for all submodules in "paths"
+            show_submodules: true
+
+markdown_extensions:
+  # convert plaintext urls into hyperlinks
+  - pymdownx.magiclink
+
+nav:
+  - index.md
