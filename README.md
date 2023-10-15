@@ -97,4 +97,3 @@ If you absolutely must commit without adhering to the pre-commit hooks, then you
 
 # TODOs
 * [ ] add [`sqlfluff`](https://docs.sqlfluff.com/en/stable/production.html#using-pre-commit) to pre-commit hooks
-* [ ] add unittest, hook checks (at least ruff and mypy)
