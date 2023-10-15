@@ -1,5 +1,8 @@
 # Sample Project - Python
 
+![Docs](https://github.com/dlstadther/sample-project-python/actions/workflows/docs.yml/badge.svg)
+![Test](https://github.com/dlstadther/sample-project-python/actions/workflows/tests.yml/badge.svg)
+
 Sample structure and setup for a Python project which includes:
 * pre-commit hooks (static formatters and type checking)
 * mkdoc generation from docstrings
