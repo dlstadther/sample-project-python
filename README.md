@@ -63,7 +63,7 @@ poetry run pytest -vv tests/test_main.py::test_hi
 make test-all
 
 # run all nox lints
-poetry run nox -r -s lint
+poetry run nox -R -s lint
 ```
 
 ### Build Docs
