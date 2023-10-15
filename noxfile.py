@@ -7,10 +7,10 @@ def _install_poetry(session: nox.Session) -> nox.Session:
     return session
 
 
-@nox.session(python=["3.9"])
+@nox.session
 def tests(session: nox.Session) -> None:
     session = _install_poetry(session=session)
-    session.run("coverage", "run", "-m", "pytest")
+    session.run("coverage", "run", "-m", "pytest", "-vv")
     session.run("coverage", "report")
 
 
@@ -18,7 +18,7 @@ def tests(session: nox.Session) -> None:
 def lint(session: nox.Session) -> None:
     session = _install_poetry(session=session)
     session.run("black", "--check", ".")
-    session.run("ruff", ".")
+    session.run("ruff", "--output-format=github", ".")
 
 
 @nox.session
