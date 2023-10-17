@@ -75,6 +75,21 @@ make doc-serve
 ```
 
 
+## Distribution
+```shell
+# Build sdist and wheel
+poetry build
+
+# Only build wheel
+poetry build --format wheel
+
+# Publish to PYPI
+# https://python-poetry.org/docs/repositories/#configuring-credentials
+poetry config pypi-token.pypi <my-token>
+poetry publish
+```
+
+
 # Pre-commit Hooks
 Pre-Commit hooks run during `git commit ...` in order to apply checks for quality and format prior to commit.
 

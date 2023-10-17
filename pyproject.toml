@@ -7,7 +7,10 @@ authors = ["Dillon Stadther"]
 readme = "README.md"
 repository = "https://github.com/dlstadther/sample-project-python"
 packages = [
-    { include = "sample", from = "src" },
+  { include = "sample", from = "src" },
+]
+include = [
+  "sample/sql/*",
 ]
 
 [build-system]
