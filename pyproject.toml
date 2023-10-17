@@ -2,8 +2,10 @@
 name = "sample-project-python"
 version = "0.1.0"
 description = "Sample Python Project"
+license = "MIT"
 authors = ["Dillon Stadther"]
 readme = "README.md"
+repository = "https://github.com/dlstadther/sample-project-python"
 packages = [
     { include = "sample", from = "src" },
 ]
