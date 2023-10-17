@@ -36,3 +36,9 @@ def test_Sample_sample_2(input_x):
 
     # Assert
     assert min(0, input_x) <= result <= max(0, input_x)
+
+
+def test_Sample_sample_3():
+    sample = Sample()
+    sql = sample.sample_3()
+    assert sql.lower().startswith("select")

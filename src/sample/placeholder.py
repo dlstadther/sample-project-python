@@ -1,7 +1,13 @@
 """
 A placeholder module for sample content
 """
+from pathlib import Path
 from random import randint
+
+import sample
+
+MODULE_DIR = Path(sample.__file__).resolve().parent
+SQL_DIR = MODULE_DIR / "sql"
 
 
 class Sample:
@@ -38,3 +44,13 @@ class Sample:
             random int (int)
         """
         return randint(min(0, x), max(0, x))
+
+    def sample_3(self) -> str:
+        """
+        Sample method which returns the string contents of a sql file
+
+        Returns
+            sql query (str)
+        """
+        with open(SQL_DIR / "query1.sql", "r") as infile:
+            return infile.read()

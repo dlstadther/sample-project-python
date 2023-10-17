@@ -85,6 +85,7 @@ The checks contained in this repo include (in the order in which they run):
 * `isort` reorders imports into a common format and order
 * `mypy` is used for static type checking
 * `poetry` checks on valid and aligned pyproject.toml and poetry.lock files
+* `sqlfluff` checks and fixes sql formatting and linting
 
 If you want `black` to ignore a particular section of code, you can add the comments `# fmt: off` and `# fmt: on` before and after the respective block of code.
 * https://stackoverflow.com/a/58584557
@@ -96,4 +97,5 @@ If you absolutely must commit without adhering to the pre-commit hooks, then you
 
 
 # TODOs
-* [ ] add [`sqlfluff`](https://docs.sqlfluff.com/en/stable/production.html#using-pre-commit) to pre-commit hooks
+* [x] add [`sqlfluff`](https://docs.sqlfluff.com/en/stable/production.html#using-pre-commit) to pre-commit hooks
+* [ ] package wheel

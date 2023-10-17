@@ -19,6 +19,7 @@ def lint(session: nox.Session) -> None:
     session = _install_poetry(session=session)
     session.run("black", "--check", ".")
     session.run("ruff", "--output-format=github", ".")
+    session.run("sqlfluff", "lint", ".")
 
 
 @nox.session

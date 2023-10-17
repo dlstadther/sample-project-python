@@ -49,3 +49,10 @@ repos:
     - id: poetry-check  # make sure the poetry configuration does not get committed in a broken state
     - id: poetry-lock  # make sure the lock file is up-to-date when committing changes
     - id: poetry-export  # sync your requirements.txt file with your current dependencies
+
+# sqlfluff
+- repo: https://github.com/sqlfluff/sqlfluff
+  rev: 2.3.3
+  hooks:
+    - id: sqlfluff-fix
+    - id: sqlfluff-lint

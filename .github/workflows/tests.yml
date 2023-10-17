@@ -44,6 +44,9 @@ jobs:
       - name: Lint with Ruff
         run: poetry run ruff --output-format=github .
 
+      - name: Lint with Sqlfluff
+        run: poetry run sqlfluff lint .
+
   type-check:
     runs-on: ubuntu-latest
     steps:
