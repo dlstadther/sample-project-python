@@ -112,5 +112,4 @@ If you absolutely must commit without adhering to the pre-commit hooks, then you
 
 
 # TODOs
-* [x] add [`sqlfluff`](https://docs.sqlfluff.com/en/stable/production.html#using-pre-commit) to pre-commit hooks
-* [ ] package wheel
+* [ ]
