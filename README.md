@@ -54,7 +54,7 @@ poetry run ruff src
 make test
 
 # Run specific tests
-poetry run pytest -vv tests/test_main.py::test_hi
+poetry run pytest -vv tests/test_placeholder.py::test_Sample_init
 ```
 
 ### Run All Checks
