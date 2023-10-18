@@ -97,7 +97,6 @@ The checks contained in this repo include (in the order in which they run):
 * Various checkers and formatters to verify valid file types, file size, and end of line and end of file whitespace/newlines
 * The `black` formatter will apply a standard code style format
 * `ruff` checks code for "lint"
-* `isort` reorders imports into a common format and order
 * `mypy` is used for static type checking
 * `poetry` checks on valid and aligned pyproject.toml and poetry.lock files
 * `sqlfluff` checks and fixes sql formatting and linting
