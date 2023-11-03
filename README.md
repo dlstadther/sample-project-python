@@ -35,7 +35,7 @@ poetry run pre-commit run
 
 # To run a particular pre-commit hook against staged files before committing:
 # poetry run pre-commit run <hook>
-poetry run pre-commit run black
+poetry run pre-commit run ruff-format
 poetry run pre-commit run ruff
 poetry run pre-commit run mypy
 
@@ -43,7 +43,7 @@ poetry run pre-commit run mypy
 poetry run pre-commit run ruff --all-files
 
 # run checks regardless of git status
-poetry run black --check src
+poetry run ruff format --check src
 poetry run mypy src
 poetry run ruff src
 ```
@@ -95,13 +95,13 @@ Pre-Commit hooks run during `git commit ...` in order to apply checks for qualit
 
 The checks contained in this repo include (in the order in which they run):
 * Various checkers and formatters to verify valid file types, file size, and end of line and end of file whitespace/newlines
-* The `black` formatter will apply a standard code style format
+* `ruff format` applies standard code style formatting (just like `black`, but faster)
 * `ruff` checks code for "lint"
 * `mypy` is used for static type checking
 * `poetry` checks on valid and aligned pyproject.toml and poetry.lock files
 * `sqlfluff` checks and fixes sql formatting and linting
 
-If you want `black` to ignore a particular section of code, you can add the comments `# fmt: off` and `# fmt: on` before and after the respective block of code.
+If you want `ruff format` to ignore a particular section of code, you can add the comments `# fmt: off` and `# fmt: on` before and after the respective block of code (same as you would if using `black`).
 * https://stackoverflow.com/a/58584557
 
 If you want `mypy` to ignore a particular line of code, you can add the comment `# type: ignore` to the end of that line.
