@@ -23,8 +23,8 @@ jobs:
           curl -sSL https://install.python-poetry.org | python3 - --version 1.6.1
           poetry install
 
-      - name: Format checking with Black
-        run: poetry run black --check .
+      - name: Format checking with Ruff Format
+        run: poetry run ruff format --check .
 
   lint:
     runs-on: ubuntu-latest
