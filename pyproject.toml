@@ -43,6 +43,7 @@ sqlfluff = "^2.3.3"
 ##########
 [tool.coverage.run]
 omit = [".*", "*/site-packages/*"]
+src = ["src"]
 
 [tool.coverage.report]
 fail_under = 70
