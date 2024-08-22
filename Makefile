@@ -13,4 +13,4 @@ test:
 	poetry run coverage run -m pytest -vv $(TEST_DIR) && poetry run coverage report -m
 
 test-all:
-	poetry run nox --reuse-existing-virtualenvs --no-install
+	poetry run nox --reuse-venv=yes --no-install
