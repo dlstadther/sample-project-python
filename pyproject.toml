@@ -63,10 +63,12 @@ ignore_missing_imports = true
 # Ruff
 ######
 [tool.ruff]
+line-length = 160
 # auto-apply changes
 #fix = true
 #exit-non-zero-on-fix = true
 
+[tool.ruff.lint]
 # Enable pycodestyle (`E`) and Pyflakes (`F`) codes by default.
 select = [
     "B",  # flake8-bugbear
@@ -108,12 +110,6 @@ exclude = [
     "node_modules",
     "venv",
 ]
-
-line-length = 160
-
-
-[tool.ruff.mccabe]
-max-complexity = 18
 
 
 ########
