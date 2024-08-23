@@ -33,14 +33,14 @@ repos:
       additional_dependencies: ['pydantic', 'types-requests']
 
 # poetry
-- repo: https://github.com/python-poetry/poetry
-  rev: 1.6.0
-  hooks:
-    - id: poetry-check  # make sure the poetry configuration does not get committed in a broken state
-    - id: poetry-lock  # make sure the lock file is up-to-date when committing changes
-      args:
-        - --check
-    # - id: poetry-export  # sync your requirements.txt file with your current dependencies
+#- repo: https://github.com/python-poetry/poetry
+#  rev: 1.6.0
+#  hooks:
+#    - id: poetry-check  # make sure the poetry configuration does not get committed in a broken state
+#    - id: poetry-lock  # make sure the lock file is up-to-date when committing changes
+#      args:
+#        - --check
+#    # - id: poetry-export  # sync your requirements.txt file with your current dependencies
 
 # sqlfluff
 - repo: https://github.com/sqlfluff/sqlfluff
@@ -48,6 +48,14 @@ repos:
   hooks:
     - id: sqlfluff-fix
     - id: sqlfluff-lint
+
+# uv
+- repo: https://github.com/astral-sh/uv-pre-commit
+  rev: 0.3.2
+  hooks:
+    - id: uv-lock
+      args:
+        - --locked  # Requires that the lockfile is up-to-date. If the lockfile is missing or needs to be updated, uv will exit with an error.
 
 # commitlint
 #   (configuration in commitlint.config.js)
