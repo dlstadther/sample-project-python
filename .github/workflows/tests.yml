@@ -8,39 +8,22 @@ on:
       - develop
 
 jobs:
+  setup:
+    uses: ./.github/workflows/setup.yml
+
   format:
+    needs:
+      - setup
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies
-        run: |
-          make init-uv
-          make install
-
       - name: Format checking with Ruff Format
         run: make format
 
   lint:
+    needs:
+      - setup
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies
-        run: |
-          make init-uv
-          make install
-
       - name: Lint with Ruff
         run: make lint-python
 
@@ -48,56 +31,26 @@ jobs:
         run: make lint-sql
 
   type-check:
+    needs:
+      - setup
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies
-        run: |
-          make init-uv
-          make install
-
       - name: Type checking with Mypy
         run: make type
 
   test:
+    needs:
+      - setup
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies
-        run: |
-          make init-uv
-          make install
-
       - name: Test with pytest
         run: make test
 
   build:
+    needs:
+      - setup
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies
-        run: |
-          make init-uv
-          make install
-
       - name: Verify build
         run: make build
 
