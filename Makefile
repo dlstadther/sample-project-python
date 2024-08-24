@@ -1,16 +1,51 @@
 TEST_DIR="tests"
 
+# Build
+build:
+	uvx --from build pyproject-build --installer uv
+
+# Docs
 doc-build:
-	poetry run mkdocs build
+	uv run mkdocs build
 
 doc-serve: doc-build
-	poetry run mkdocs serve
+	uv run mkdocs serve
 
 doc-deploy:
-	poetry run mkdocs gh-deploy --force
+	uv run mkdocs gh-deploy --force
+
+# Setup
+init: init-uv init-python
+
+init-uv:
+	curl -LsSf https://astral.sh/uv/$(shell cat .uv-version)/install.sh | sh
+
+init-python:
+	uv python install $(cat .python-version)
+
+install:
+	uv sync
+
+lock:
+	uv lock
+
+# Validations
+format:
+	uv run ruff format --check .
+
+lint: lint-python lint-sql
+
+lint-python:
+	uv run ruff check --output-format=github .
+
+lint-sql:
+	uv run sqlfluff lint .
+
+type:
+	uv run mypy .
 
 test:
-	poetry run coverage run -m pytest -vv $(TEST_DIR) && poetry run coverage report -m
+	uv run coverage run -m pytest -vv $(TEST_DIR) && uv run coverage report -m
 
 test-all:
-	poetry run nox --reuse-existing-virtualenvs --no-install
+	uv run nox --reuse-venv=yes --no-install

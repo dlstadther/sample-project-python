@@ -11,16 +11,10 @@ Sample structure and setup for a Python project which includes:
 
 ## Installation
 ```shell
-# install poetry
-curl -sSL https://install.python-poetry.org | python3 -
-# update poetry
-poetry self update
+# install requirements
+make init
+make install
 
-# ensure venv is created within project
-poetry config virtualenvs.in-project true
-
-# install project dependencies into venv
-poetry install
 # install pre-commit configuration
 poetry run pre-commit install
 ```
@@ -28,24 +22,24 @@ poetry run pre-commit install
 
 ## Usage
 
-### Run Pre-Commmit Hooks
+### Run Pre-Commit Hooks
 ```shell
 # To run the pre-commit hooks against staged files before committing:
-poetry run pre-commit run
+uv run pre-commit run
 
 # To run a particular pre-commit hook against staged files before committing:
-# poetry run pre-commit run <hook>
-poetry run pre-commit run ruff-format
-poetry run pre-commit run ruff
-poetry run pre-commit run mypy
+# uv run pre-commit run <hook>
+uv run pre-commit run ruff-format
+uv run pre-commit run ruff
+uv run pre-commit run mypy
 
 # To run a particular pre-commit hook against all files (staged and unstaged, before committing):
-poetry run pre-commit run ruff --all-files
+uv run pre-commit run ruff --all-files
 
 # run checks regardless of git status
-poetry run ruff format --check src
-poetry run mypy src
-poetry run ruff src
+uv run ruff format --check src
+uv run mypy src
+uv run ruff src
 ```
 
 ### Run Unittests
@@ -54,7 +48,7 @@ poetry run ruff src
 make test
 
 # Run specific tests
-poetry run pytest -vv tests/test_placeholder.py::test_Sample_init
+uv run pytest -vv tests/test_placeholder.py::test_Sample_init
 ```
 
 ### Run All Checks
@@ -63,7 +57,7 @@ poetry run pytest -vv tests/test_placeholder.py::test_Sample_init
 make test-all
 
 # run all nox lints
-poetry run nox -R -s lint
+uv run nox -R -s lint
 ```
 
 ### Build Docs
@@ -76,17 +70,22 @@ make doc-serve
 
 
 ## Distribution
+> As of 2024-08-22, uv does not yet have dedicated commands for building and publishing a package.
+> Their [documentation recommends](https://docs.astral.sh/uv/guides/publish/) using the PyPA tools `build` and `twine`.
 ```shell
 # Build sdist and wheel
-poetry build
+uvx --from build pyproject-build --installer uv
 
 # Only build wheel
-poetry build --format wheel
+uvx --from build pyproject-build --installer uv --wheel
 
-# Publish to PYPI
-# https://python-poetry.org/docs/repositories/#configuring-credentials
-poetry config pypi-token.pypi <my-token>
-poetry publish
+# Publish to TEST PyPI
+export TWINE_USERNAME="__token__"
+export TWINE_PASSWORD="<my-pypi-token>"
+uvx twine upload --repository testpypi dist/*
+
+# Publish to PyPI
+uvx twine upload dist/*
 ```
 
 
@@ -98,8 +97,8 @@ The checks contained in this repo include (in the order in which they run):
 * `ruff format` applies standard code style formatting (just like `black`, but faster)
 * `ruff` checks code for "lint"
 * `mypy` is used for static type checking
-* `poetry` checks on valid and aligned pyproject.toml and poetry.lock files
 * `sqlfluff` checks and fixes sql formatting and linting
+* (COMING SOON) `uv` checks on valid and aligned pyproject.toml and uv.lock files
 * `commitlint` enforces commit message conforms to [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) format
 
 If you want `ruff format` to ignore a particular section of code, you can add the comments `# fmt: off` and `# fmt: on` before and after the respective block of code (same as you would if using `black`).

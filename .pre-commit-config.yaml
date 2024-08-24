@@ -6,7 +6,7 @@ default_install_hook_types: [pre-commit, commit-msg]
 repos:
 # misc pre-commit helpers
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.4.0
+  rev: v4.6.0
   hooks:
     - id: check-added-large-files
       args:
@@ -20,39 +20,37 @@ repos:
 
 # ruff
 - repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: v0.1.3
+  rev: v0.6.2
   hooks:
     - id: ruff-format
     - id: ruff
 
 # mypy
 - repo: https://github.com/pre-commit/mirrors-mypy
-  rev: v1.1.1
+  rev: v1.11.1
   hooks:
     - id: mypy
       additional_dependencies: ['pydantic', 'types-requests']
 
-# poetry
-- repo: https://github.com/python-poetry/poetry
-  rev: 1.6.0
-  hooks:
-    - id: poetry-check  # make sure the poetry configuration does not get committed in a broken state
-    - id: poetry-lock  # make sure the lock file is up-to-date when committing changes
-      args:
-        - --check
-    # - id: poetry-export  # sync your requirements.txt file with your current dependencies
-
 # sqlfluff
 - repo: https://github.com/sqlfluff/sqlfluff
-  rev: 2.3.3
+  rev: 3.1.1
   hooks:
     - id: sqlfluff-fix
     - id: sqlfluff-lint
 
+# uv
+- repo: https://github.com/astral-sh/uv-pre-commit
+  rev: 0.3.2
+  hooks:
+    - id: uv-lock
+      args:
+        - --locked  # Requires that the lockfile is up-to-date. If the lockfile is missing or needs to be updated, uv will exit with an error.
+
 # commitlint
 #   (configuration in commitlint.config.js)
 - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
-  rev: v9.11.0
+  rev: v9.16.0
   hooks:
     - id: commitlint
       additional_dependencies: ['@commitlint/config-conventional']

@@ -1,6 +1,7 @@
 """
 A placeholder module for sample content
 """
+
 from pathlib import Path
 from random import randint
 
