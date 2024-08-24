@@ -1,5 +1,9 @@
 TEST_DIR="tests"
 
+# Build
+build:
+	uvx --from build pyproject-build --installer uv
+
 # Docs
 doc-build:
 	uv run mkdocs build

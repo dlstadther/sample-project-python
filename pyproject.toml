@@ -35,9 +35,6 @@ dev-dependencies = [
 
 [tool.hatch.build]
 packages = ["src/sample"]
-include = [
-  "sample/sql/*",
-]
 
 
 ##########
