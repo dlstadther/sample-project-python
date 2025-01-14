@@ -1,5 +1,3 @@
-TEST_DIR="tests"
-
 # Build
 build:
 	uv build
@@ -53,7 +51,7 @@ type:
 	uv run mypy .
 
 test:
-	uv run coverage run -m pytest -vv $(TEST_DIR) && uv run coverage report -m
+	uv run pytest -vv
 
 test-all:
 	uv run nox --reuse-venv=yes --no-install
