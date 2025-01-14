@@ -4,6 +4,14 @@ TEST_DIR="tests"
 build:
 	uvx --from build pyproject-build --installer uv
 
+# Clean
+clean:
+	rm -rf .nox/
+	rm -rf .venv/
+	rm -rf dist/
+	rm -rf site/
+	rm -f .coverage*
+
 # Docs
 doc-build:
 	uv run mkdocs build
