@@ -17,8 +17,8 @@ Documentation = "https://dlstadther.github.io/sample-project-python"
 Repository = "https://github.com/dlstadther/sample-project-python"
 
 
-[tool.uv]
-dev-dependencies = [
+[dependency-groups]
+dev = [
     "coverage[toml] >=7.6.1,<8",
     "mkdocs >=1.6.0,<2",
     "mkdocs-material >=9.4.5,<10",
