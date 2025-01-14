@@ -70,22 +70,18 @@ make doc-serve
 
 
 ## Distribution
-> As of 2024-08-22, uv does not yet have dedicated commands for building and publishing a package.
-> Their [documentation recommends](https://docs.astral.sh/uv/guides/publish/) using the PyPA tools `build` and `twine`.
+
 ```shell
 # Build sdist and wheel
-uvx --from build pyproject-build --installer uv
+make build
 
 # Only build wheel
-uvx --from build pyproject-build --installer uv --wheel
-
-# Publish to TEST PyPI
-export TWINE_USERNAME="__token__"
-export TWINE_PASSWORD="<my-pypi-token>"
-uvx twine upload --repository testpypi dist/*
+uv build --wheel
 
 # Publish to PyPI
-uvx twine upload dist/*
+export UV_PUBLISH_TOKEN="<my-pypi-token>"
+uv publish
+uv publish --token "<my-pypi-token>"
 ```
 
 
@@ -98,7 +94,7 @@ The checks contained in this repo include (in the order in which they run):
 * `ruff` checks code for "lint"
 * `mypy` is used for static type checking
 * `sqlfluff` checks and fixes sql formatting and linting
-* (COMING SOON) `uv` checks on valid and aligned pyproject.toml and uv.lock files
+* `uv` checks on valid and aligned pyproject.toml and uv.lock files
 * `commitlint` enforces commit message conforms to [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) format
 
 If you want `ruff format` to ignore a particular section of code, you can add the comments `# fmt: off` and `# fmt: on` before and after the respective block of code (same as you would if using `black`).

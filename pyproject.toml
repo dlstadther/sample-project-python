@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "sample-project-python"
-version = "0.3.0"
+version = "0.3.1"
 description = "Sample Python Project"
 license = "MIT"
 authors = [{name = "Dillon Stadther"}, ]
@@ -16,10 +16,13 @@ dependencies = []
 Documentation = "https://dlstadther.github.io/sample-project-python"
 Repository = "https://github.com/dlstadther/sample-project-python"
 
+[project.optional-dependencies]
+df = [
+    "pandas >= 2.0.0",
+]
 
-[tool.uv]
-dev-dependencies = [
-    "coverage[toml] >=7.6.1,<8",
+[dependency-groups]
+dev = [
     "mkdocs >=1.6.0,<2",
     "mkdocs-material >=9.4.5,<10",
     "mkdocstrings[python] >=0.25.2,<1",
@@ -46,6 +49,7 @@ src = ["src"]
 
 [tool.coverage.report]
 fail_under = 70
+show_missing = true
 
 
 ######
@@ -115,6 +119,10 @@ exclude = [
 # Pytest
 ########
 [tool.pytest.ini_options]
+addopts = "--cov=src --strict-markers"
+markers = [
+    "df: marks tests as requiring the \"df\" extra install (deselect with '-m \"not df\"')",
+]
 pythonpath = [
   "src"
 ]

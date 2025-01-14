@@ -1,8 +1,14 @@
-TEST_DIR="tests"
-
 # Build
 build:
-	uvx --from build pyproject-build --installer uv
+	uv build
+
+# Clean
+clean:
+	rm -rf .nox/
+	rm -rf .venv/
+	rm -rf dist/
+	rm -rf site/
+	rm -f .coverage*
 
 # Docs
 doc-build:
@@ -45,7 +51,7 @@ type:
 	uv run mypy .
 
 test:
-	uv run coverage run -m pytest -vv $(TEST_DIR) && uv run coverage report -m
+	uv run pytest -vv -m "not df"
 
 test-all:
 	uv run nox --reuse-venv=yes --no-install
