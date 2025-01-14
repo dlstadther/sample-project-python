@@ -3,7 +3,7 @@ import nox
 
 def _install_package_manager(session: nox.Session) -> nox.Session:
     session.install("uv")
-    session.run("uv", "sync")
+    session.run("make", "install")
     return session
 
 
