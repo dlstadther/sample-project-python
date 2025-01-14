@@ -94,7 +94,7 @@ The checks contained in this repo include (in the order in which they run):
 * `ruff` checks code for "lint"
 * `mypy` is used for static type checking
 * `sqlfluff` checks and fixes sql formatting and linting
-* (COMING SOON) `uv` checks on valid and aligned pyproject.toml and uv.lock files
+* `uv` checks on valid and aligned pyproject.toml and uv.lock files
 * `commitlint` enforces commit message conforms to [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) format
 
 If you want `ruff format` to ignore a particular section of code, you can add the comments `# fmt: off` and `# fmt: on` before and after the respective block of code (same as you would if using `black`).

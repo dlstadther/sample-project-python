@@ -45,7 +45,7 @@ repos:
   hooks:
     - id: uv-lock
       args:
-        - --locked  # Requires that the lockfile is up-to-date. If the lockfile is missing or needs to be updated, uv will exit with an error.
+        - --check  # Requires that the lockfile is up-to-date. If the lockfile is missing or needs to be updated, uv will exit with an error.
 
 # commitlint
 #   (configuration in commitlint.config.js)
