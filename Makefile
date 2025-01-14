@@ -2,7 +2,7 @@ TEST_DIR="tests"
 
 # Build
 build:
-	uvx --from build pyproject-build --installer uv
+	uv build
 
 # Clean
 clean:

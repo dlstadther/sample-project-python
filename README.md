@@ -70,22 +70,18 @@ make doc-serve
 
 
 ## Distribution
-> As of 2024-08-22, uv does not yet have dedicated commands for building and publishing a package.
-> Their [documentation recommends](https://docs.astral.sh/uv/guides/publish/) using the PyPA tools `build` and `twine`.
+
 ```shell
 # Build sdist and wheel
-uvx --from build pyproject-build --installer uv
+make build
 
 # Only build wheel
-uvx --from build pyproject-build --installer uv --wheel
-
-# Publish to TEST PyPI
-export TWINE_USERNAME="__token__"
-export TWINE_PASSWORD="<my-pypi-token>"
-uvx twine upload --repository testpypi dist/*
+uv build --wheel
 
 # Publish to PyPI
-uvx twine upload dist/*
+export UV_PUBLISH_TOKEN="<my-pypi-token>"
+uv publish
+uv publish --token "<my-pypi-token>"
 ```
 
 
