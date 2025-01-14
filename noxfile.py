@@ -10,7 +10,14 @@ def _install_package_manager(session: nox.Session) -> nox.Session:
 @nox.session
 def tests(session: nox.Session) -> None:
     session = _install_package_manager(session=session)
-    session.run("make", "test")
+    session.run("uv", "run", "pytest", "-vv", "-m", "not df")
+
+
+@nox.session
+def tests_extra_pandas(session: nox.Session) -> None:
+    session = _install_package_manager(session=session)
+    session.run("uv", "sync", "--extra", "df")
+    session.run("uv", "run", "pytest", "-vv", "-m", "df")
 
 
 @nox.session

@@ -51,7 +51,7 @@ type:
 	uv run mypy .
 
 test:
-	uv run pytest -vv
+	uv run pytest -vv -m "not df"
 
 test-all:
 	uv run nox --reuse-venv=yes --no-install

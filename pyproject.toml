@@ -16,6 +16,10 @@ dependencies = []
 Documentation = "https://dlstadther.github.io/sample-project-python"
 Repository = "https://github.com/dlstadther/sample-project-python"
 
+[project.optional-dependencies]
+df = [
+    "pandas >= 2.0.0",
+]
 
 [dependency-groups]
 dev = [
@@ -115,7 +119,10 @@ exclude = [
 # Pytest
 ########
 [tool.pytest.ini_options]
-addopts = "--cov=src"
+addopts = "--cov=src --strict-markers"
+markers = [
+    "df: marks tests as requiring the \"df\" extra install (deselect with '-m \"not df\"')",
+]
 pythonpath = [
   "src"
 ]
