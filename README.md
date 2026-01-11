@@ -4,7 +4,7 @@
 ![Test](https://github.com/dlstadther/sample-project-python/actions/workflows/tests.yml/badge.svg)
 
 Sample structure and setup for a Python project which includes:
-* pre-commit hooks (static formatters and type checking)
+* prek hooks (static formatters and type checking)
 * mkdoc generation from docstrings
 * unittest execution
 
@@ -15,26 +15,26 @@ Sample structure and setup for a Python project which includes:
 make init
 make install
 
-# install pre-commit configuration
-poetry run pre-commit install
+# install prek configuration
+poetry run prek install
 ```
 
 
 ## Usage
 
-### Run Pre-Commit Hooks
+### Run Prek Hooks
 ```shell
-# To run the pre-commit hooks against staged files before committing:
-uv run pre-commit run
+# To run the prek hooks against staged files before committing:
+uv run prek run
 
-# To run a particular pre-commit hook against staged files before committing:
-# uv run pre-commit run <hook>
-uv run pre-commit run ruff-format
-uv run pre-commit run ruff
-uv run pre-commit run mypy
+# To run a particular prek hook against staged files before committing:
+# uv run prek run <hook>
+uv run prek run ruff-format
+uv run prek run ruff
+uv run prek run mypy
 
-# To run a particular pre-commit hook against all files (staged and unstaged, before committing):
-uv run pre-commit run ruff --all-files
+# To run a particular prek hook against all files (staged and unstaged, before committing):
+uv run prek run ruff --all-files
 
 # run checks regardless of git status
 uv run ruff format --check src
@@ -85,8 +85,8 @@ uv publish --token "<my-pypi-token>"
 ```
 
 
-# Pre-commit Hooks
-Pre-Commit hooks run during `git commit ...` in order to apply checks for quality and format prior to commit.
+# Prek Hooks
+Prek hooks run during `git commit ...` in order to apply checks for quality and format prior to commit.
 
 The checks contained in this repo include (in the order in which they run):
 * Various checkers and formatters to verify valid file types, file size, and end of line and end of file whitespace/newlines
@@ -103,7 +103,7 @@ If you want `ruff format` to ignore a particular section of code, you can add th
 If you want `mypy` to ignore a particular line of code, you can add the comment `# type: ignore` to the end of that line.
 If `# type: ignore` is added to the very top of a file, `mypy` will ignore the entire file.
 
-If you absolutely must commit without adhering to the pre-commit hooks, then you can use `git commit -n ...` where `-n` is shorthand for `--no-verify`.
+If you absolutely must commit without adhering to the prek hooks, then you can use `git commit -n ...` where `-n` is shorthand for `--no-verify`.
 
 
 # TODOs
