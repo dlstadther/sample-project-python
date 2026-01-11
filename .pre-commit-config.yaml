@@ -25,12 +25,9 @@ repos:
     - id: ruff-format
     - id: ruff
 
-# mypy
-- repo: https://github.com/pre-commit/mirrors-mypy
-  rev: v1.19.1
-  hooks:
-    - id: mypy
-      additional_dependencies: ['pydantic', 'types-requests']
+# ty
+# Note: ty pre-commit hook not yet available (see https://github.com/astral-sh/ty/issues/269)
+# Type checking is handled via prek or make type
 
 # sqlfluff
 - repo: https://github.com/sqlfluff/sqlfluff

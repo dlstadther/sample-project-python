@@ -7,7 +7,7 @@ from random import randint
 
 import sample
 
-MODULE_DIR = Path(sample.__file__).resolve().parent
+MODULE_DIR = Path(sample.__file__).resolve().parent  # type: ignore
 SQL_DIR = MODULE_DIR / "sql"
 
 
