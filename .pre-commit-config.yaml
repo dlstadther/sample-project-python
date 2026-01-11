@@ -6,7 +6,7 @@ default_install_hook_types: [pre-commit, commit-msg]
 repos:
 # misc pre-commit helpers
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v5.0.0
+  rev: v6.0.0
   hooks:
     - id: check-added-large-files
       args:
@@ -20,28 +20,28 @@ repos:
 
 # ruff
 - repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: v0.9.1
+  rev: v0.14.11
   hooks:
     - id: ruff-format
     - id: ruff
 
 # mypy
 - repo: https://github.com/pre-commit/mirrors-mypy
-  rev: v1.14.1
+  rev: v1.19.1
   hooks:
     - id: mypy
       additional_dependencies: ['pydantic', 'types-requests']
 
 # sqlfluff
 - repo: https://github.com/sqlfluff/sqlfluff
-  rev: 3.3.0
+  rev: 3.5.0
   hooks:
     - id: sqlfluff-fix
     - id: sqlfluff-lint
 
 # uv
 - repo: https://github.com/astral-sh/uv-pre-commit
-  rev: 0.5.18
+  rev: 0.9.24
   hooks:
     - id: uv-lock
       args:
@@ -50,7 +50,7 @@ repos:
 # commitlint
 #   (configuration in commitlint.config.js)
 - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
-  rev: v9.16.0
+  rev: v9.23.0
   hooks:
     - id: commitlint
       additional_dependencies: ['@commitlint/config-conventional']
