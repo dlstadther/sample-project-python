@@ -30,7 +30,7 @@ init-python:
 	uv python install $(cat .python-version)
 
 install:
-	uv sync
+	uv sync --all-extras
 
 lock:
 	uv lock
