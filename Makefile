@@ -48,7 +48,7 @@ lint-sql:
 	uv run sqlfluff lint .
 
 type:
-	uv run mypy .
+	uv run ty check
 
 test:
 	uv run pytest -vv -m "not df"

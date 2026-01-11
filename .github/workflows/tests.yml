@@ -62,7 +62,7 @@ jobs:
           make init-uv
           make install
 
-      - name: Type checking with Mypy
+      - name: Type checking with ty
         run: make type
 
   test:
