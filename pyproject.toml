@@ -137,6 +137,14 @@ match = "(main|master)"
 prerelease_token = ""
 prerelease = false
 
+# TESTING: Uncomment the section below to allow releases from the current branch
+# This makes it easy to test semantic release on any branch.
+# To disable, comment out this entire section.
+[tool.semantic_release.branches.test]
+match = ".*"  # Matches any branch name
+prerelease_token = "rc"
+prerelease = true
+
 [tool.semantic_release.branches.pre_release]
 match = "(pre-.*|beta.*|alpha.*)"
 prerelease_token = "rc"
