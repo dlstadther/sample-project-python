@@ -13,44 +13,19 @@ on:
       dry_run:
         description: 'Run in dry-run mode (no actual release)'
         required: false
-        default: 'false'
+        default: false
         type: boolean
 
 jobs:
   release:
     runs-on: ubuntu-latest
-    permissions:
-      # allow creation of commit/release/tags
-      contents: write
-      pull-requests: write
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies
-        run: |
-          make init-uv
-          make install
-
-      - name: Configure git
-        run: |
-          git config user.name "semantic-release"
-          git config user.email "semantic-release@github.com"
-
-      - name: Run semantic release (dry-run)
-        if: github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          make release-dry-run
-
       - name: Run semantic release
-        if: github.event_name != 'workflow_dispatch' || github.event.inputs.dry_run != true
+        uses: python-semantic-release/python-semantic-release@v10.5.3
+        with:
+          github_token: ${GITHUB_TOKEN}
+          # TODO: come back to figuring how to support dry-run mode
+          # no_operation_mode: ${{ github.event.inputs.dry_run || false }}
+          no_operation_mode: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          make release
