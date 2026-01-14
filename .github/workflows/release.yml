@@ -22,7 +22,7 @@ jobs:
     permissions:
       # allow creation of commit/release/tags
       contents: write
-      workflows: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
 
