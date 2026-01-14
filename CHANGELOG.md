@@ -2,6 +2,17 @@
 
 <!-- version list -->
 
+## v1.0.0-rc.4 (2026-01-14)
+
+### Bug Fixes
+
+- Attempt workflow permission
+  ([`bdc2a63`](https://github.com/dlstadther/sample-project-python/commit/bdc2a631b0bc8e5580a061f463c60216d1090901))
+
+- Attempting pr write permission given github discussion comment
+  ([`c755c4b`](https://github.com/dlstadther/sample-project-python/commit/c755c4b2745bc4e0d6db79f64d77d9c0b0fc3fb9))
+
+
 ## v1.0.0-rc.3 (2026-01-14)
 
 ### Bug Fixes
