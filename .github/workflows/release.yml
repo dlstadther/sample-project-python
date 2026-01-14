@@ -22,11 +22,9 @@ jobs:
     permissions:
       # allow creation of commit/release/tags
       contents: write
+      workflows: write
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
