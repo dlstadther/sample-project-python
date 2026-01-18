@@ -1573,7 +1573,7 @@ wheels = [
 
 [[package]]
 name = "sample-project-python"
-version = "1.0.0rc5"
+version = "1.0.0"
 source = { editable = "." }
 
 [package.optional-dependencies]
