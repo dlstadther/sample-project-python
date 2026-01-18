@@ -2,6 +2,15 @@
 
 <!-- version list -->
 
+## v1.0.1 (2026-01-18)
+
+### Bug Fixes
+
+- Typo in semantic-release config
+  ([#17](https://github.com/dlstadther/sample-project-python/pull/17),
+  [`0ece801`](https://github.com/dlstadther/sample-project-python/commit/0ece801b969b6256d88aa5b9949580e9c30abe7d))
+
+
 ## v1.0.0 (2026-01-18)
 
 - Initial Release
