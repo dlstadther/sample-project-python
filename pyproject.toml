@@ -120,7 +120,7 @@ version_toml = [
     # "file:variable:[format_type]"
     "pyproject.toml:project.version:nf",
 ]
-version_variable = [
+version_variables = [
     # "file:variable:format_type"
     "src/sample/__init__.py:__version__:nf",
 ]
