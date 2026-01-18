@@ -4,10 +4,10 @@ on:
   push:
     branches:
       - main
-      # TESTING: Uncomment the line below to allow releases from the current branch
+      # TESTING: Uncomment the line below to allow releases from a branch with the following name.
       # This makes it easy to test semantic release on any branch.
       # To disable, comment out this line.
-      - semantic-release
+      # - semantic-release
   workflow_dispatch:
     inputs:
       dry_run:
