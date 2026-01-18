@@ -123,7 +123,6 @@ version_toml = [
 version_variable = [
     # "file:variable:format_type"
     "src/sample/__init__.py:__version__:nf",
-    "pyproject.toml:project.version:nf",
 ]
 
 [tool.semantic_release.changelog]
