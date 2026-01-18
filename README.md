@@ -4,12 +4,13 @@
 ![Test](https://github.com/dlstadther/sample-project-python/actions/workflows/tests.yml/badge.svg)
 
 Sample structure and setup for a Python project which includes:
+
 * prek hooks (static formatters and type checking)
 * mkdoc generation from docstrings
 * unittest execution
 
-
 ## Installation
+
 ```shell
 # install requirements
 make init
@@ -23,6 +24,7 @@ poetry run prek install
 ## Usage
 
 ### Run Prek Hooks
+
 ```shell
 # To run the prek hooks against staged files before committing:
 uv run prek run
@@ -43,6 +45,7 @@ uv run ruff src
 ```
 
 ### Run Unittests
+
 ```shell
 # Run all unittests
 make test
@@ -52,6 +55,7 @@ uv run pytest -vv tests/test_placeholder.py::test_Sample_init
 ```
 
 ### Run All Checks
+
 ```shell
 # Run all tests, lints, and checks
 make test-all
@@ -78,14 +82,17 @@ make build
 # Only build wheel
 uv build --wheel
 
+# Test semantic release (dry-run, shows what would be released)
+make release-dry-run
+
 # Publish to PyPI
 export UV_PUBLISH_TOKEN="<my-pypi-token>"
 uv publish
 uv publish --token "<my-pypi-token>"
 ```
 
+## Prek Hooks
 
-# Prek Hooks
 Prek hooks run during `git commit ...` in order to apply checks for quality and format prior to commit.
 
 The checks contained in this repo include (in the order in which they run):
@@ -104,7 +111,6 @@ If you want `ty` to ignore a particular line of code, you can add the comment `#
 If `# type: ignore` is added to the very top of a file, `ty` will ignore the entire file.
 
 If you absolutely must commit without adhering to the prek hooks, then you can use `git commit -n ...` where `-n` is shorthand for `--no-verify`.
-
 
 # TODOs
 * [ ]

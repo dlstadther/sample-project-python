@@ -55,3 +55,10 @@ test:
 
 test-all:
 	uv run nox --reuse-venv=yes --no-install
+
+# Release
+release:
+	uv run semantic-release -v version --commit --tag --changelog --push --vcs-release
+
+release-dry-run:
+	uv run semantic-release --noop version --print

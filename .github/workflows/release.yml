@@ -1,0 +1,55 @@
+name: release
+
+on:
+  push:
+    branches:
+      - main
+      # TESTING: Uncomment the line below to allow releases from a branch with the following name.
+      # This makes it easy to test semantic release on any branch.
+      # To disable, comment out this line.
+      # - semantic-release
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Run in dry-run mode (no actual release)'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      # allow creation of commit/release/tags
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          make init-uv
+          make install
+
+      - name: Configure git
+        run: |
+          git config user.name "semantic-release"
+          git config user.email "semantic-release@github.com"
+
+      - name: Run semantic release (dry-run)
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          make release-dry-run
+
+      - name: Run semantic release
+        if: github.event_name != 'workflow_dispatch' || github.event.inputs.dry_run != true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          make release
