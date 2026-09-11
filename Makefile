@@ -48,7 +48,7 @@ lint-sql:
 	uv run sqlfluff lint .
 
 type:
-	uv run ty check
+	uv run pyrefly check
 
 test:
 	uv run pytest -vv -m "not df"

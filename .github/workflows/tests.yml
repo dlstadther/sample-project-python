@@ -62,7 +62,7 @@ jobs:
           make init-uv
           make install
 
-      - name: Type checking with ty
+      - name: Type checking with Pyrefly
         run: make type
 
   test:
