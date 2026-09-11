@@ -2,6 +2,31 @@
 
 <!-- version list -->
 
+## v1.0.2 (2026-09-11)
+
+### Bug Fixes
+
+- **type-check**: Pin pyrefly-pre-commit to a stable release
+  ([#18](https://github.com/dlstadther/sample-project-python/pull/18),
+  [`c4b1678`](https://github.com/dlstadther/sample-project-python/commit/c4b1678f1ef61875328a4ec0e6cf31082329bc32))
+
+- **type-check**: Use the official pyrefly pre-commit hook
+  ([#18](https://github.com/dlstadther/sample-project-python/pull/18),
+  [`c4b1678`](https://github.com/dlstadther/sample-project-python/commit/c4b1678f1ef61875328a4ec0e6cf31082329bc32))
+
+### Chores
+
+- **type-check**: Switch static type checking from ty to pyrefly
+  ([#18](https://github.com/dlstadther/sample-project-python/pull/18),
+  [`c4b1678`](https://github.com/dlstadther/sample-project-python/commit/c4b1678f1ef61875328a4ec0e6cf31082329bc32))
+
+### Refactoring
+
+- **type-check**: Drop stale type: ignore now unneeded by pyrefly
+  ([#18](https://github.com/dlstadther/sample-project-python/pull/18),
+  [`c4b1678`](https://github.com/dlstadther/sample-project-python/commit/c4b1678f1ef61875328a4ec0e6cf31082329bc32))
+
+
 ## v1.0.1 (2026-01-18)
 
 ### Bug Fixes
