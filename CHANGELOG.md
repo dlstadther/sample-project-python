@@ -2,6 +2,25 @@
 
 <!-- version list -->
 
+## v1.3.0 (2026-09-11)
+
+### Features
+
+- **pyscn**: Add .pyscn.toml config with reasonable defaults
+  ([#23](https://github.com/dlstadther/sample-project-python/pull/23),
+  [`31b0e3d`](https://github.com/dlstadther/sample-project-python/commit/31b0e3d7f4e4a750a57ba7810376ed2a9da92e01))
+
+- **pyscn**: Integrate pyscn code quality gate into CI
+  ([#23](https://github.com/dlstadther/sample-project-python/pull/23),
+  [`31b0e3d`](https://github.com/dlstadther/sample-project-python/commit/31b0e3d7f4e4a750a57ba7810376ed2a9da92e01))
+
+### Refactoring
+
+- **pyscn**: Move config into pyproject.toml, trim to essentials
+  ([#23](https://github.com/dlstadther/sample-project-python/pull/23),
+  [`31b0e3d`](https://github.com/dlstadther/sample-project-python/commit/31b0e3d7f4e4a750a57ba7810376ed2a9da92e01))
+
+
 ## v1.2.1 (2026-09-11)
 
 ### Bug Fixes
