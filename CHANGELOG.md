@@ -2,6 +2,15 @@
 
 <!-- version list -->
 
+## v1.2.0 (2026-09-11)
+
+### Features
+
+- **interrogate**: Add docstring coverage checks to prek and lint
+  ([#20](https://github.com/dlstadther/sample-project-python/pull/20),
+  [`1f3b9c1`](https://github.com/dlstadther/sample-project-python/commit/1f3b9c1942e18b76e6f8177362a3b3de44f1329e))
+
+
 ## v1.1.0 (2026-09-11)
 
 ### Chores
