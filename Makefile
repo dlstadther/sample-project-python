@@ -12,13 +12,13 @@ clean:
 
 # Docs
 doc-build:
-	uv run mkdocs build
+	uv run zensical build
 
-doc-serve: doc-build
-	uv run mkdocs serve
+doc-serve:
+	uv run zensical serve
 
-doc-deploy:
-	uv run mkdocs gh-deploy --force
+doc-deploy: doc-build
+	uv run ghp-import -n -p -f site
 
 # Setup
 init: init-uv init-python
