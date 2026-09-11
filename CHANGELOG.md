@@ -2,6 +2,25 @@
 
 <!-- version list -->
 
+## v1.1.0 (2026-09-11)
+
+### Chores
+
+- **deps**: Upgrade python dependencies
+  ([#19](https://github.com/dlstadther/sample-project-python/pull/19),
+  [`992abd9`](https://github.com/dlstadther/sample-project-python/commit/992abd9f16b842e95cfc372aae0a643b78ae5835))
+
+### Documentation
+
+- Add tooling TODOs
+  ([`f948d56`](https://github.com/dlstadther/sample-project-python/commit/f948d56ca26a4eb47927838cc04b75324e6e8335))
+
+### Features
+
+- **nox**: Support multi-version testing and pytest posargs
+  ([`1e9ab2f`](https://github.com/dlstadther/sample-project-python/commit/1e9ab2f91fa8147d39c49e83229073c86f9c11d8))
+
+
 ## v1.0.2 (2026-09-11)
 
 ### Bug Fixes
