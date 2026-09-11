@@ -26,5 +26,5 @@ jobs:
           make init-uv
           make install
 
-      - name: "Build mkdocs"
+      - name: "Build and deploy docs"
         run: make doc-deploy

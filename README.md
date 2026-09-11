@@ -6,7 +6,7 @@
 Sample structure and setup for a Python project which includes:
 
 * prek hooks (static formatters and type checking)
-* mkdoc generation from docstrings
+* doc generation from docstrings (via [zensical](https://zensical.org/))
 * unittest execution
 
 ## Installation
