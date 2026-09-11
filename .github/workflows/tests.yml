@@ -47,6 +47,9 @@ jobs:
       - name: Lint with Sqlfluff
         run: make lint-sql
 
+      - name: Quality check with pyscn
+        run: make lint-quality
+
   type-check:
     runs-on: ubuntu-latest
     steps:

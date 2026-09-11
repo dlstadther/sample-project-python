@@ -29,6 +29,7 @@ dev = [
     "nox >=2024.4.15,<2025",
     "prek >=0.1.0,<1",
     "pyrefly >=1.2.0,<2",
+    "pyscn >=1.31.2,<2",
     "pytest >=8.3.2,<9",
     "pytest-cov >=5.0.0,<6",
     "python-semantic-release >=10.0.0,<11",

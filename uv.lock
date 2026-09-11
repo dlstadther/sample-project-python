@@ -1989,6 +1989,17 @@ wheels = [
 ]
 
 [[package]]
+name = "pyscn"
+version = "1.31.2"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/7f/8f/da2c6b5e9c4f0b70ccb48fdfd0c0b96534ac0f5d2097c20f48664cf1c574/pyscn-1.31.2-py3-none-macosx_11_0_arm64.whl", hash = "sha256:87d0e0d1813c384345c3f7cc726678f095c975404f59039127f50a62e5708afa", size = 10232689, upload-time = "2026-09-10T09:12:49.765Z" },
+    { url = "https://files.pythonhosted.org/packages/76/26/8dafae4879b88453c4db396f73b102773453c21d05a99291ad193ac01451/pyscn-1.31.2-py3-none-manylinux_2_34_aarch64.whl", hash = "sha256:e07658e496fd0cd0ba60640f6e8cf0da316a1258a44a9790fd55535df0131b31", size = 10046867, upload-time = "2026-09-10T09:12:51.893Z" },
+    { url = "https://files.pythonhosted.org/packages/8a/f9/d7d125796d0e6db9d8103dc0174255354561f0abf89c004851afaabaddec/pyscn-1.31.2-py3-none-manylinux_2_34_x86_64.whl", hash = "sha256:55c6a22d4b1ee24628a62b06c9967d7e9b2619067097793172414e03c1505621", size = 11162333, upload-time = "2026-09-10T09:12:54.705Z" },
+    { url = "https://files.pythonhosted.org/packages/65/74/b70422a79032bf0d39fb8b7d5fd4b08fea03aede6424d288f3f55422742b/pyscn-1.31.2-py3-none-win_amd64.whl", hash = "sha256:c8349f184d40e16841466054738f5adacd8df4cba2e6458a80e7a0d8ec6e383f", size = 11630685, upload-time = "2026-09-10T09:12:57.287Z" },
+]
+
+[[package]]
 name = "pytest"
 version = "8.4.2"
 source = { registry = "https://pypi.org/simple" }
@@ -2613,6 +2624,7 @@ dev = [
     { name = "nox" },
     { name = "prek" },
     { name = "pyrefly" },
+    { name = "pyscn" },
     { name = "pytest" },
     { name = "pytest-cov" },
     { name = "python-semantic-release" },
@@ -2633,6 +2645,7 @@ dev = [
     { name = "nox", specifier = ">=2024.4.15,<2025" },
     { name = "prek", specifier = ">=0.1.0,<1" },
     { name = "pyrefly", specifier = ">=1.2.0,<2" },
+    { name = "pyscn", specifier = ">=1.31.2,<2" },
     { name = "pytest", specifier = ">=8.3.2,<9" },
     { name = "pytest-cov", specifier = ">=5.0.0,<6" },
     { name = "python-semantic-release", specifier = ">=10.0.0,<11" },
