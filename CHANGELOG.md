@@ -2,6 +2,21 @@
 
 <!-- version list -->
 
+## v1.2.1 (2026-09-11)
+
+### Bug Fixes
+
+- **ci**: Trigger docs workflow on push to main
+  ([#22](https://github.com/dlstadther/sample-project-python/pull/22),
+  [`b71f95f`](https://github.com/dlstadther/sample-project-python/commit/b71f95f54d8d2f0d469da5f707b7e78879af2e22))
+
+### Chores
+
+- **docs**: Replace mkdocs with zensical
+  ([#21](https://github.com/dlstadther/sample-project-python/pull/21),
+  [`909dd6b`](https://github.com/dlstadther/sample-project-python/commit/909dd6b326a23656f56f8695aeeaa7f2c77d3288))
+
+
 ## v1.2.0 (2026-09-11)
 
 ### Features
