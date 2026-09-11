@@ -20,7 +20,6 @@ make install
 poetry run prek install
 ```
 
-
 ## Usage
 
 ### Run Prek Hooks
@@ -72,7 +71,6 @@ make doc-build
 make doc-serve
 ```
 
-
 ## Distribution
 
 ```shell
@@ -113,4 +111,7 @@ that line (`# type: ignore` is also respected).
 If you absolutely must commit without adhering to the prek hooks, then you can use `git commit -n ...` where `-n` is shorthand for `--no-verify`.
 
 # TODOs
-* [ ]
+* [ ] switch from `nox` to `tox` (tox is more widely used and prevents python abuse - e.g. setup.py can become too complicated)
+  * make sure tox goes fast - https://hynek.me/articles/turbo-charge-tox/
+* [ ] switch `coverage` to not report until the end and combine all coverage reports together into one
+* [ ] add [`interrogate`](https://github.com/econchick/interrogate) to prek and test suite
