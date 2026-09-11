@@ -23,6 +23,7 @@ df = [
 
 [dependency-groups]
 dev = [
+    "interrogate >=1.7.0,<2",
     "mkdocs >=1.6.0,<2",
     "mkdocs-material >=9.4.5,<10",
     "mkdocstrings[python] >=0.25.2,<1",
@@ -39,6 +40,16 @@ dev = [
 
 [tool.hatch.build]
 packages = ["src/sample"]
+
+
+#############
+# Interrogate
+#############
+[tool.interrogate]
+fail-under = 100
+ignore-init-method = true
+verbose = 1
+exclude = ["tests", "docs", "noxfile.py"]
 
 
 ##########
