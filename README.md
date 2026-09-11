@@ -99,6 +99,7 @@ The checks contained in this repo include (in the order in which they run):
 * `ruff` checks code for "lint"
 * `pyrefly` is used for static type checking
 * `sqlfluff` checks and fixes sql formatting and linting
+* `interrogate` checks docstring coverage
 * `uv` checks on valid and aligned pyproject.toml and uv.lock files
 * `commitlint` enforces commit message conforms to [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) format
 
@@ -114,4 +115,3 @@ If you absolutely must commit without adhering to the prek hooks, then you can u
 * [ ] switch from `nox` to `tox` (tox is more widely used and prevents python abuse - e.g. setup.py can become too complicated)
   * make sure tox goes fast - https://hynek.me/articles/turbo-charge-tox/
 * [ ] switch `coverage` to not report until the end and combine all coverage reports together into one
-* [ ] add [`interrogate`](https://github.com/econchick/interrogate) to prek and test suite

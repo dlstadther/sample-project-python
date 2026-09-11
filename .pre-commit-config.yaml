@@ -34,6 +34,13 @@ repos:
       pass_filenames: false
       language: system  # use the project's own pyrefly install so versions stay in sync with pyproject.toml
 
+# interrogate (docstring coverage)
+- repo: https://github.com/econchick/interrogate
+  rev: 1.7.0
+  hooks:
+    - id: interrogate
+      pass_filenames: false  # config (incl. exclude paths) lives in pyproject.toml
+
 # sqlfluff
 - repo: https://github.com/sqlfluff/sqlfluff
   rev: 3.5.0
