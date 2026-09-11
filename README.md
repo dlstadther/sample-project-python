@@ -33,7 +33,7 @@ uv run prek run
 # uv run prek run <hook>
 uv run prek run ruff-format
 uv run prek run ruff
-uv run prek run pyrefly
+uv run prek run pyrefly-check
 
 # To run a particular prek hook against all files (staged and unstaged, before committing):
 uv run prek run ruff --all-files
