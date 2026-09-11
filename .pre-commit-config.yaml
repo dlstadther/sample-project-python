@@ -20,7 +20,7 @@ repos:
 
 # ruff
 - repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: v0.14.11
+  rev: v0.16.7
   hooks:
     - id: ruff-format
     - id: ruff
@@ -43,7 +43,7 @@ repos:
 
 # uv
 - repo: https://github.com/astral-sh/uv-pre-commit
-  rev: 0.9.24
+  rev: 0.12.13
   hooks:
     - id: uv-lock
       args:
@@ -52,7 +52,7 @@ repos:
 # commitlint
 #   (configuration in commitlint.config.js)
 - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
-  rev: v9.23.0
+  rev: v9.26.0
   hooks:
     - id: commitlint
       additional_dependencies: ['@commitlint/config-conventional']
