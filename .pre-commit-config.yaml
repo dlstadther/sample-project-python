@@ -41,6 +41,15 @@ repos:
     - id: interrogate
       pass_filenames: false  # config (incl. exclude paths) lives in pyproject.toml
 
+# pyscn (code quality gate: complexity, dead code, clones, circular deps)
+- repo: local
+  hooks:
+    - id: pyscn
+      name: pyscn
+      entry: uv run pyscn check
+      language: system
+      pass_filenames: false
+
 # sqlfluff
 - repo: https://github.com/sqlfluff/sqlfluff
   rev: 3.5.0

@@ -39,7 +39,7 @@ lock:
 format:
 	uv run ruff format --check .
 
-lint: lint-python lint-sql lint-docstrings
+lint: lint-python lint-sql lint-docstrings lint-quality
 
 lint-python:
 	uv run ruff check --output-format=github .
@@ -49,6 +49,9 @@ lint-sql:
 
 lint-docstrings:
 	uv run interrogate
+
+lint-quality:
+	uv run pyscn check .
 
 type:
 	uv run pyrefly check

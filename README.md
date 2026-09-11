@@ -100,6 +100,7 @@ The checks contained in this repo include (in the order in which they run):
 * `pyrefly` is used for static type checking
 * `sqlfluff` checks and fixes sql formatting and linting
 * `interrogate` checks docstring coverage
+* `pyscn` checks code quality (complexity, dead code, clones, circular deps)
 * `uv` checks on valid and aligned pyproject.toml and uv.lock files
 * `commitlint` enforces commit message conforms to [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) format
 

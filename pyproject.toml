@@ -29,6 +29,7 @@ dev = [
     "nox >=2024.4.15,<2025",
     "prek >=0.1.0,<1",
     "pyrefly >=1.2.0,<2",
+    "pyscn >=1.31.2,<2",
     "pytest >=8.3.2,<9",
     "pytest-cov >=5.0.0,<6",
     "python-semantic-release >=10.0.0,<11",
@@ -50,6 +51,39 @@ fail-under = 100
 ignore-init-method = true
 verbose = 1
 exclude = ["tests", "docs", "noxfile.py"]
+
+
+#######
+# Pyscn
+#######
+# Code quality gate: complexity, dead code, clones, coupling, architecture.
+# This only sets what deviates from pyscn's own defaults (or is left as an
+# explicit toggle). Full option reference: https://docs.codescan.dev/configuration/reference/
+
+[tool.pyscn.output]
+format = "text"                 # Default output format: text, json, yaml, csv, html
+show_details = false             # Show detailed breakdown by default
+sort_by = "complexity"           # Default sort: name, complexity, risk
+min_complexity = 1               # Minimum complexity to report
+directory = ""                   # Output directory for reports (empty = default .pyscn/reports/, gitignored)
+
+[tool.pyscn.complexity]
+enabled = true                   # Enable complexity analysis
+low_threshold = 9                # Functions with complexity ≤ 9 are low risk
+medium_threshold = 19            # Functions with complexity 10-19 are medium risk
+                                  # Functions with complexity ≥ 20 are high risk
+max_complexity = 0               # Maximum allowed complexity (0 = no limit). Must be 0 or > medium_threshold;
+                                  # the CI gate's own limit (10) is set independently via `pyscn check --max-complexity`
+report_unchanged = true          # Report functions with complexity = 1
+
+[tool.pyscn.dead_code]
+enabled = true                   # Enable dead code detection; see reference link above for tunable options
+
+[tool.pyscn.cbo]
+enabled = true                   # Enable class coupling (CBO) analysis; see reference link above for tunable options
+
+[tool.pyscn.architecture]
+enabled = false                  # This project is a flat single-package library, not a layered app
 
 
 ##########
