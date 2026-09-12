@@ -116,3 +116,4 @@ If you absolutely must commit without adhering to the prek hooks, then you can u
 * [ ] switch from `nox` to `tox` (tox is more widely used and prevents python abuse - e.g. setup.py can become too complicated)
   * make sure tox goes fast - https://hynek.me/articles/turbo-charge-tox/
 * [ ] switch `coverage` to not report until the end and combine all coverage reports together into one
+* [ ] migrate from `semantic-release` to `release-please`
