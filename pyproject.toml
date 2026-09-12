@@ -50,7 +50,7 @@ packages = ["src/sample"]
 fail-under = 100
 ignore-init-method = true
 verbose = 1
-exclude = ["tests", "docs", "noxfile.py"]
+exclude = ["tests", "docs", "noxfile.py", ".nox", ".venv", "dist", "build", ".mypy_cache", ".pytest_cache", ".ruff_cache"]
 
 
 #######
