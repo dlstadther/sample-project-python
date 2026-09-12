@@ -2,6 +2,25 @@
 
 <!-- version list -->
 
+## v1.4.0 (2026-09-12)
+
+### Bug Fixes
+
+- **ci**: Use main as trunk branch in quality workflow push trigger
+  ([#25](https://github.com/dlstadther/sample-project-python/pull/25),
+  [`67c4c54`](https://github.com/dlstadther/sample-project-python/commit/67c4c54c5256471e069e4c478c6cd542d12a9eda))
+
+### Features
+
+- **ci**: Persist pyscn analyze report and post PR comment
+  ([#25](https://github.com/dlstadther/sample-project-python/pull/25),
+  [`67c4c54`](https://github.com/dlstadther/sample-project-python/commit/67c4c54c5256471e069e4c478c6cd542d12a9eda))
+
+- **ci**: Split pyscn quality analysis into its own path-filtered workflow
+  ([#25](https://github.com/dlstadther/sample-project-python/pull/25),
+  [`67c4c54`](https://github.com/dlstadther/sample-project-python/commit/67c4c54c5256471e069e4c478c6cd542d12a9eda))
+
+
 ## v1.3.1 (2026-09-12)
 
 ### Bug Fixes
