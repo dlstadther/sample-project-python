@@ -8,8 +8,7 @@ on:
       - 'pyproject.toml'
   push:
     branches:
-      - master
-      - develop
+      - main
     paths:
       - '**/*.py'
       - '.pyscn.toml'
