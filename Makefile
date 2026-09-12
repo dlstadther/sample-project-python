@@ -53,6 +53,9 @@ lint-docstrings:
 lint-quality:
 	uv run pyscn check .
 
+lint-quality-report:
+	uv run pyscn analyze --no-open --html .
+
 type:
 	uv run pyrefly check
 
