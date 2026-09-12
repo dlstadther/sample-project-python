@@ -2,6 +2,15 @@
 
 <!-- version list -->
 
+## v1.3.1 (2026-09-12)
+
+### Bug Fixes
+
+- **lint**: Exclude nox/venv/cache dirs from interrogate scan
+  ([#24](https://github.com/dlstadther/sample-project-python/pull/24),
+  [`ff18b38`](https://github.com/dlstadther/sample-project-python/commit/ff18b38a3bcd2bf7501bf5674179ee5ef9e8f931))
+
+
 ## v1.3.0 (2026-09-11)
 
 ### Features
