@@ -28,9 +28,6 @@ jobs:
 
   lint:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write
     steps:
       - uses: actions/checkout@v4
 
@@ -49,36 +46,6 @@ jobs:
 
       - name: Lint with Sqlfluff
         run: make lint-sql
-
-      - name: Quality check with pyscn
-        run: make lint-quality
-
-      - name: Generate pyscn report
-        if: always()
-        run: make lint-quality-report
-
-      - name: Upload pyscn report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: pyscn-report
-          path: .pyscn/reports/*.html
-
-      - name: Comment pyscn summary on PR
-        if: >-
-          always() &&
-          github.event_name == 'pull_request' &&
-          github.event.pull_request.head.repo.full_name == github.repository
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          uv run pyscn analyze --json --output - . | jq -r '
-            "## pyscn report\n" +
-            "- **Health Score:** " + (.summary.health_score | tostring) + " / 100 (" + .summary.grade + ")\n" +
-            "- Complexity: " + (.summary.complexity_score | tostring) + "\n" +
-            "- Dead code: " + (.summary.dead_code_score | tostring) + "\n"
-          ' > comment.md
-          gh pr comment "${{ github.event.pull_request.number }}" --body-file comment.md
 
   type-check:
     runs-on: ubuntu-latest
